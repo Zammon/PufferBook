@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.dropdownWallet{
+    position: absolute;
+    height: 32px;
+    top: 49px;
+    left: 0;
+    right: 0;
+    padding: 0 225px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.dropdown-wallet-left{
+    width: auto;
+    min-width: 256.53px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 6px;
+}
+
+.dropdown-wallet-center{
+    width: 480px;
+    min-width: 250px;
+    margin-left: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 6px;
+    display: flex;
+}
+
+.dropdown-center-itemleft {
+    height: auto;
+    width: 15px;
+    margin: 8px;
+    background-color: aqua;
+}
+
+.dropdown-center-itemright {
+    height: auto;
+    width: 400px;
+    background-color: blueviolet;
+}
+
+.dropdown-wallet-right {
+    width: 250px;
+    color: #ffff;
+    border-radius: 6px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divs-30 {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: aquamarine;
+}
+
+.dropdown-right-item {
+    height: 32px;
+    width: auto;
+    color: #ffff;
+    border: 2px solid rgb(59, 59, 59);
+    border-radius: 6px;
+    padding: 2px 10px;
+    background-color: rgb(53, 53, 53);
+}
+
+@media only screen and (min-width: 1014px){
+    .dropdown-wallet-center{
+        margin-right: 10px;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 1132px){
+    .dropdown-wallet-right{
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 1301px){
+    .dropdownWallet{
+        padding: 0 100px;
+    }
+}
+
+@media only screen and (min-width: 1301px){
+    .dropdownWallet{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 677px) {
+    .dropdownWallet{
+        display: none;
+    }
+}

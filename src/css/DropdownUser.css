@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* พื้นที่ของ dropdown */
+.dropdown-container {
+    position: absolute;
+    top: 49px;
+    right: 0;
+    margin: 0 150px;
+    height: auto;
+    width: 200px;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border:1.8px solid #979797; 
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom:1.5px solid #979797;  
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+li:last-child {
+    border-bottom: none;   
+}
+
+.dropdown-item:hover > .dropdown-item-center{
+    font-weight: bold;
+    filter: brightness(1.3);
+}
+
+.dropdown-item-left {
+    height: 25px;
+    width: auto;
+    margin-left: 10px;
+    width: auto;
+}
+
+.dropdown-item-center {
+    font-weight: normal;
+    width: auto;
+}
+
+.dropdown-item-right {
+    width: auto;
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 1624px){
+    .dropdown-container{
+        right: 0;
+        margin-right: 25px;
+    }
+}
