@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Container Main*/
+.slide-container {
+    height: 400px;
+    width: auto;
+    background-color: rgb(156, 66, 66);
+    position: relative;
+}
+
+/*Slide div (All)*/
+.slide-item {
+    height: 100%;
+    background-color: rgb(255, 112, 191);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/*Title*/
+.slide-item-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 150px;
+    width: 100%;
+    padding-bottom: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 180px;
+    color: aliceblue;
+    overflow-y: hidden;
+}
+
+/*Synopsis*/
+.slide-item-syn {
+    min-height: 619;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0 300px;
+}
+
+/*Imegins*/
+.slide-item-img {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide-shadow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 310px;
+    z-index: 998;
+    background-image: linear-gradient(0deg, rgb(28, 28, 29) 0%,#ccc0bd00 100%);
+    background-blend-mode: multiply;
+}
+
+
+/*Button choose slide imgs*/
+.but-container {
+    position: absolute;
+    bottom: 20px;
+    height: 50px;
+    z-index: 999;
+    width: 100%;
+    padding-top: 13px;
+    display: flex;
+    justify-content: center;
+    /* background-color: rgba(255, 235, 205, 0.26); */
+    overflow: hidden;
+}
+
+.but-item {
+    height: 6px;
+    width: 59px;
+    background-color: azure;
+    border-radius: 6px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.but-item-active {
+    height: 6px;
+    width: 59px;
+    border-radius: 6px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #FF9376;
+    outline: 2px solid rgb(255,232,219,104);
+}
+
+/**/
+@media only screen and (max-width: 1624px) {
+    .slide-item-syn{margin-left: 250px; margin-right: 250px;}
+}
+
+@media only screen and (max-width: 1300px){
+    .slide-item-syn{
+        margin-left: 150px; 
+        margin-right: 150px;
+        font-size: 18px;
+    }
+}

@@ -1,11 +1,13 @@
 import React from "react";
-import Navbar from "./component/Navbar";
+import Navbar from "./component/Nav/Navbar";
+import PageHome from "./component/Home/PageHome";
 
 function App() {
   return (
-   <>
-   <Navbar/>
-   </>
+    <>
+      <Navbar/>
+      <PageHome/>
+    </>
   );
 }
 

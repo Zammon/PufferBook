@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+/* ไม่ให้ดึงรูปออกไปได้ */
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
 /* พื้นที่ของ dropdown */
 .dropdown-container {
     position: absolute;
@@ -18,6 +27,7 @@
     border:1.8px solid #979797; 
     display: flex;
     flex-direction: column;
+    z-index: 999999;
 }
 
 .dropdown-item {
@@ -51,6 +61,12 @@ li:last-child {
 .dropdown-item-center {
     font-weight: normal;
     width: auto;
+    
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
 }
 
 .dropdown-item-right {
