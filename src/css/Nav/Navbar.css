@@ -6,7 +6,6 @@
 
 .navbar-full{
     height: 47px;
-    max-width: 1920px;
     width: 100%;
     background-color: rgb(66,66,66);
     padding: 5px 225px;
@@ -36,7 +35,7 @@
     margin-top: 3px;
     margin-left: 10px;
     cursor: pointer;
-
+    
     user-select: none; /* supported by Chrome and Opera */
    -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -87,11 +86,35 @@
     cursor: pointer;
 }
 
-.notification-Nav{
+.notification-Nav {
+    position: relative;
     height: 23px;
     width: auto;
-    margin-top: 6px;
-    margin-left: 20px;
+    cursor: pointer;
+}
+
+.reletive {
+    position: relative;
+    height: 28px;
+}
+
+.notification-amount {
+    position: absolute;
+    overflow: hidden;
+    font-size: 11px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    padding-top: 0;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background-color: rgb(255, 44, 44);
     cursor: pointer;
 }
 
@@ -123,8 +146,7 @@
 }
 
 /*--- จบการตั้งค่ icon---*/
-
-
+/*กำหนดค่าของ center*/
 .item-center{
     height: 30px;
     width: 480px;
@@ -137,13 +159,12 @@
     background-color: rgb(233, 233, 233);
     display: flex;
 }
-/*กำหนดค่าของ center*/
 
 .input-search{
     font-size: 16px;
     color: rgb(56, 56, 56);
     height: auto;
-    width: 400px;
+    width: 91%;
     background-color: transparent;
     border: none;
     outline: none;
@@ -170,14 +191,25 @@
     margin-left: 6px;
 }
 
+.notification-setting-size {
+    height: 23px;
+    width: 23px;
+    margin-top: 6px;
+    margin-left: 20px;
+}
+
+.notification-setting-size {
+
+}
+
 @media only screen and (max-width: 1624px){
     .navbar-full{padding: 5px 100px;}
 }
 
-@media only screen and (max-width: 1300px){
+@media only screen and (max-width: 1310px){
     .navbar-full{padding: 5px 100px;}
     .div-coins{display: none;}
-    .notification-Nav{margin-left: 7px;}
+    .notification-setting-size{margin-left: 7px;}
     .item-child-left{
         font-size: 12px;
         padding-top: 6.5px;

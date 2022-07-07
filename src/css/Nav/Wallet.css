@@ -18,7 +18,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    z-index: 999999;
+    z-index: 99;
 }
 
 
@@ -30,10 +30,11 @@
 }
 
 .dropdown-wallet-center{
+    position: relative;
     width: 480px;
     min-width: 250px;
     margin-left: 20px;
-    border: 1px solid rgb(0, 0, 0);
+    /* border: 1px solid rgb(0, 0, 0); */
     border-radius: 6px;
     display: flex;
 }

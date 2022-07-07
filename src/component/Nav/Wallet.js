@@ -1,5 +1,5 @@
 import React from "react";
-import './../../css/Wallet.css'
+import './../../css/Nav/Wallet.css'
 
 function Wallet(){
     const wallets = <div className="dropdown-right-item"><h4>$1500</h4></div>

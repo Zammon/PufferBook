@@ -1,49 +1,113 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {Component, useEffect, useRef, useState} from "react";
+/*Component*/
 import DropdownUser from './DropdownUser';
+import Wallet from "./Wallet";
+import DropSearch from "./DropSearch";
+import DropNotification from "./DropNotification";
+/*Css*/
+import './../../css/Nav/Navbar.css';
+import './../../css/Nav/DropdownUser.css';
+/*Imgs*/
 import vector from './../../imagins/Vector.png';
 import coins from './../../imagins/Coins.png';
 import notification from './../../imagins/Notification.png';
 import cloud from './../../imagins/Cloud.png';
 import userprofile from './../../imagins/Profile_Peotal.png';
 import logo from './../../imagins/Logo.png'
-import './../../css/Navbar.css';
-import './../../css/DropdownUser.css'
-import Wallet from "./Wallet";
 
-{/*Navbar Component*/} 
+/*Navbar Component*/
 function Navbar() {
+    /* Object */
     const num = '$1500';
+
+    /* State */
     let [opendrop, setOpendrop] = useState(false);
-    
-    let [inDropdown,setIndropdown] = useState('');
+    let [dropuser,setDropUser] = useState('');
     let [actives, setActives] = useState('');
     
-    let [walletdrop, setWalletdrop] = useState('');
-    let [walletsCoin, setwalletsCoin] = useState('');
+    let [dropsearch, setDropSearch] = useState('');
+
+    let [dropcoin, setDropCoin] = useState('');
     
-    function clickDropdown(bu) {
-         if(bu){
-                setIndropdown(<DropdownUser />);
+    let [dropnoti, setDropnoti] = useState('');
+    let [opennotidrop, setOpenNotiDrop] = useState(false);
+    /* useRef */
+    const userdropRef = useRef(null);
+    const searchdropRef = useRef(null);
+    const notificationdropRef = useRef(null);
+    /* useEffect */
+    useEffect(()=>{
+            let hangdleruser = (event) => {
+                if(!userdropRef.current.contains(event.target)){
+                    onClickDropUser(false)
+                }
+            }
+            
+            let hangdlersearch = (event) => {
+                if(!searchdropRef.current.contains(event.target)){
+                    onClickDropSearch(false)
+                }
+            }
+
+            let hangdlernotification = (event) => {
+                if(!notificationdropRef.current.contains(event.target)){
+                    onClickDropNotification(false)
+                }
+            }
+
+                document.addEventListener("mousedown", hangdleruser)
+                document.addEventListener("mousedown", hangdlersearch)
+                document.addEventListener("mousedown", hangdlernotification)
+            return ()=>{
+                document.removeEventListener("mousedown", hangdleruser)
+                document.removeEventListener("mousedown", hangdlersearch)
+                document.removeEventListener("mousedown", hangdlernotification)
+            }
+        
+    },[]);
+
+    /* Function */
+    /* Drop User */
+    function onClickDropUser(props) {
+         if(props){
+                setDropUser(<DropdownUser />);
                 setActives('-active');
                 setOpendrop(true);
          } else {
-                setIndropdown('');
+                setDropUser('');
                 setActives('');
                 setOpendrop(false);
          }
-        
+    }
+    /* Drop Search */
+    function onClickDropSearch(props){
+        if(props){
+            setDropSearch(<DropSearch />);
+     } else {
+            setDropSearch('');
+     }
     }
 
-    function hoverDropdown(bu){
-        if(bu){
-            setwalletsCoin(<Wallet />);
-            setWalletdrop(bu);
+    /* Drop Coin */
+    function onHoverDropCoin(props){
+        if(props){
+            setDropCoin(<Wallet />);
         } else {
-            setwalletsCoin('');
-            setWalletdrop(false);
+            setDropCoin('');
         }
     }
 
+    /* Drop Notification */
+    function onClickDropNotification(props) {
+        if(props){
+            setDropnoti(<DropNotification />);
+            setOpenNotiDrop(true);
+        } else {
+            setDropnoti('');
+            setOpenNotiDrop(false);
+        }
+    }
+    /* return main */
     return(
     <>
     <div className='navbar-full'>
@@ -53,20 +117,30 @@ function Navbar() {
             <div className="item-child-left ad">E-Book</div>
             <div className="item-child-left">Commic</div>
         </div>
-        <div className='item-center'>
-            <img className="vector-Nav" src={vector} />
-            <input className="input-search" type='input' placeholder='Search...'/>
-        </div>
+
+        <div ref={searchdropRef} className='item-center'>
+                <img className="vector-Nav" src={vector} />
+                <input className="input-search" type='input' onClick={()=>onClickDropSearch(true)} placeholder='Search...'/>
+                {dropsearch}
+        </div> 
         <div className='item-right'>
             <div className="box-coins">
-                <img className="coins-Nav" src={coins} onMouseEnter={()=>hoverDropdown(true)} onMouseLeave={()=>hoverDropdown(false)} />
+                <img className="coins-Nav" src={coins} onMouseEnter={()=>onHoverDropCoin(true)} onMouseLeave={()=>onHoverDropCoin(false)} />
                 <div className="div-coins mar-top" style={{color:"white"}}> {`:${num}`} </div>
+                {dropcoin}
             </div>
             <img className="cloud-Nav" src={cloud} />
-            <img className="notification-Nav item-child" src={notification} />
-            <img className={`profile-user${actives}`} src={userprofile} onClick={()=>clickDropdown(!opendrop)}/>
-            {walletsCoin}
-            {inDropdown}
+            <div ref={notificationdropRef} onClick={()=>onClickDropNotification(!opennotidrop)} className="notification-setting-size">
+                <div className="reletive">
+                    <img className="notification-Nav" src={notification} /> 
+                    <div className="notification-amount">
+                        10
+                    </div>   
+                </div>
+                {dropnoti}
+            </div>
+            <img ref={userdropRef} className={`profile-user${actives}`} src={userprofile} onClick={()=>onClickDropUser(!opendrop)}/>
+                {dropuser}
         </div>
     </div>
     </>

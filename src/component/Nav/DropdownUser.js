@@ -7,7 +7,7 @@ import bookmarkIcon from './../../imagins/bookmarkIcon.png';
 import settingIcon from './../../imagins/settingIcon.png';
 import logOutIcon from './../../imagins/logoutIcon.png';
 
-import './../../css/DropdownUser.css'
+import './../../css/Nav/DropdownUser.css'
 
 function DropdownUser() {
     const titleDrop = [

@@ -4,10 +4,12 @@
     box-sizing: border-box;
 }
 /*Main Box Noveldaily*/
-.noveldaily-container {
-    height: 500px;
+.noveldaily-container-main {
+    position: relative;
+    height: auto;
+    max-width: 1307px;
     width: auto;
-    background-color: rgba(255, 255, 255, 0.932);
+    /* background-color: rgba(84, 82, 109, 0.932); */
     margin-top: 63px;
     margin-left: 300px;
     margin-right: 300px;
@@ -16,11 +18,11 @@
     overflow: hidden;
 }
 
-/*logo*/
+/*Logo*/
 .logo-noveldaily {
-    margin-top: 5px;
+    margin-top: 7px;
     margin-right: 10px;
-    height: 30px;
+    height: 25px;
     width: auto;
 }
 
@@ -32,29 +34,98 @@
 
 /* Div title */
 .noveldaily-title {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-left: 50px;
     width: auto;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content:space-between;
+    align-items: baseline;
+    padding-right: 30px;
+}
+
+.noveldaily-title-left {
     display: flex;
 }
 
+.noveldaily-title-right {
+    font-size: 16px;
+    font-weight:  bold;
+    color: rgb(255,121,85);
+    cursor: pointer;
+}
+
+.noveldaily-title-right:hover {
+    text-decoration: underline;
+}
+
+.point-container {
+    height: 15px;
+    width: auto;
+    margin: 10px 0;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.buttons-point{
+    height: 15px;
+    width: 15px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: rgb(136, 136, 136);
+    cursor: pointer;
+}
+
+/* Noveldaily Slides (Row) */
 .noveldaily-slides-container {
     height: 100%;
-    width: auto;
+    width: 100%;
     /* background-color: rgb(248, 91, 91); */
-    padding: 0 10px;
-    margin: 10px 50px;
-    display: flex;
-    justify-content: space-evenly;
-    column-gap: 30px;
-    align-items: stretch;
+    margin-top: 10px;
+    margin-bottom: 63px;
+    padding-left: 37px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    /* border: 1px solid rgb(155, 155, 155); */
+    border-radius: 6px;
+    /* justify-content: space-evenly; */
+    /* column-gap: 30px; */
+    /* align-items: stretch; */
+}
+
+.noveldaily-rowslide{
+    white-space: nowrap;
+    transition: ease 1000ms;
 }
 
 /* fuction NovelItems() */
 /* box-items */
+.noveldaily-slides-items {
+    display: inline-block;
+    width: 210px;
+    height: 409px;
+    /* background-color: rgb(255, 185, 185); */
+    /* overflow: hidden; */
+    margin: 0 21px;
+}
+
+
+/* image-slides */
+.noveldaily-slides-image {
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px -1px rgb(170, 170, 170);
+    cursor: pointer;
+}
+
+/*Title Novel*/
 .noveldaily-slides-title {
     width: auto;
-    height: 20px;
+    height: 25px;
     margin-bottom: 4px;
     text-align: center;
     font-size: 18px;
@@ -62,17 +133,11 @@
     /* background-color: aqua; */
 }
 
+/*Syn Novel*/
 .noveldaily-slides-syn {
     color: rgb(99, 99, 99);
     text-align: center;
     margin-bottom: 10px;
-}
-
-/* image-slides */
-.noveldaily-slides-image {
-    width: auto;
-    height: 300px;
-    cursor: pointer;
 }
 
 /* button follow */
@@ -95,10 +160,10 @@
 
 /* Responsive */
 @media only screen and (max-width: 1624px) {
-    .noveldaily-container{margin-left: 250px; margin-right: 250px;}
+    .noveldaily-container-main {margin-left: 250px; margin-right: 250px;}
 }
 
 @media only screen and (max-width: 1300px){
-    .noveldaily-container{margin-left: 100px; margin-right: 100px;}
+    .noveldaily-container-main {margin-left: 100px; margin-right: 100px;}
 }
 

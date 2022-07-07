@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './../../css/Home/Slideshow.css'
 import imgcover1 from './../../imagins/CoverSlide_1.jpg'
 import imgcover2 from './../../imagins/CoverSlide_2.jpg'
@@ -18,19 +18,41 @@ function Slideshow() {
             id: 2 ,
             title: 'SPY x Family',
             synopsis: '... about 2',
-            imgs: {imgcover2}
+            imgs: imgcover2
         },
         {
             id: 3 ,
             title: 'Jobless Reincarnation',
             synopsis: '... about 3',
-            imgs: {imgcover3}
+            imgs: imgcover3
         }
     ];
-
-    const Covermaps = covers.map((title,index) => {
+    /* Map Covers */
+    const covermaps = covers.map((title,index) => {
         return <SlideItems key={index}  cover={title} />
     })
+    /* Map Points */
+    const pointmaps = covers.map((_,indexs)=>{
+        return <Butslide key={indexs} inx={indexs}/>
+    })
+    /* Setting Delay */
+    const delay = 3000;
+    
+    /*  UseStates */
+    const [slidess, setSlidess] = useState(0);
+    
+    /* UseRefs */
+    const timeoutRef = useRef(null);
+
+    useEffect(()=>{
+        resetTimeout();
+        timeoutRef.current = setTimeout(
+            ()=>
+            setSlidess((prevIndex)=> prevIndex === covers.length - 1 ? 0 : prevIndex + 1 
+            ),delay);
+
+        return () => { resetTimeout() };
+    }, [slidess]);
 
     /*function*/
     function SlideItems(props) {
@@ -39,32 +61,35 @@ function Slideshow() {
         return(
                 <div className="slide-item">
                     <div className="slide-item-title">
-                        {covers[0].title}
-                        <p className="slide-item-syn">{covers[0].synopsis}</p>
+                        {cover.title}
+                        <p className="slide-item-syn">{cover.synopsis}</p>
                     </div>
                     <div className="slide-shadow"></div>
-                    <img className="slide-item-img" src={covers[0].imgs} />
+                    <img className="slide-item-img" src={cover.imgs} />
                 </div>
             );   
     }
 
+    function resetTimeout() {
+        if(timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+    }
+
     function Butslide(props) {
         return(
-            <div className={`but-item${props.active}`}>
-                
-            </div>
+            <div className={`but-item${slidess===props.inx ? "-active" : ""}`} onClick={()=>{setSlidess(props.inx)}}></div>
         );
     }
 
 
     return(
         <div className="slide-container">
-            <SlideItems />
+                <div className="slideshow-container" style={{ transform: `translate3d(${-slidess * 100}%, 0, 0)`}}>
+                    {covermaps}
+                </div>
             <div className="but-container">
-                <Butslide active="-active" />
-                <Butslide active=""/>
-                <Butslide active=""/>
-                <Butslide active=""/>
+                {pointmaps}
             </div>
         </div>
     );  

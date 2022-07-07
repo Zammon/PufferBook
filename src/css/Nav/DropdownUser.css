@@ -42,9 +42,6 @@ img {
     cursor: pointer;
 }
 
-li:last-child {
-    border-bottom: none;   
-}
 
 .dropdown-item:hover > .dropdown-item-center{
     font-weight: bold;
@@ -61,12 +58,16 @@ li:last-child {
 .dropdown-item-center {
     font-weight: normal;
     width: auto;
-    
+    /*none Hilight*/
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
     user-select: none;
+}
+
+li:last-child {
+    border-bottom: none;
 }
 
 .dropdown-item-right {
