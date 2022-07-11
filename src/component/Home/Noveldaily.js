@@ -12,6 +12,7 @@ import novel9 from './../../imagins/novels/novel09.jpg';
 import novel10 from './../../imagins/novels/novel10.jpg';
 import iconnoveldaily from './../../imagins/icons/noveldaily.png';
 import {ButslideLeft, ButslideRight} from './../Tools/Butslide'
+import { Link } from "react-router-dom";
 
 
 function Noveldaily() {
@@ -110,7 +111,9 @@ function Noveldaily() {
 
         return(
             <div className="noveldaily-slides-items">
+                <Link as={Link} to={`/read/post/${novels.title}`}>
                     <img className="noveldaily-slides-image" src={novels.imgs}/>
+                </Link>
                 <div className="noveldaily-slides-content">
                     <h4 className="noveldaily-slides-title">
                         {novels.title}

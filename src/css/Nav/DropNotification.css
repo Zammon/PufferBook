@@ -82,12 +82,20 @@
     width: 100%;
     /* background-color: darkgoldenrod; */
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .notification-post:hover {
     background-color: rgb(241, 241, 241);
 }
 
+.noneunder {
+    text-decoration: none;
+}
+
+.colortextDropNotification {
+    color: black;
+}
 /* Item-Left */
 /*------------------------------------------------------*/
 .post-item-left {

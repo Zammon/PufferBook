@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.readposts-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    /* background-color: rgb(207, 207, 207); */
+}
+ 
+.introduction-container , .listEp-container , .comment-container {
+    /* min-width: 1500px; */
+    margin: 0 390px;
+}

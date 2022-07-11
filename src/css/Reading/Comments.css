@@ -1,0 +1,10 @@
+.comment-container {
+    width: auto;
+    height: auto;
+    min-height: 300px;
+    background-color: #FCFCFC;
+    border: 1px solid #C4C4C4;
+    border-bottom: none;
+    border-top: none;
+    /* background-color: rgba(100, 148, 237, 0.384); */
+}

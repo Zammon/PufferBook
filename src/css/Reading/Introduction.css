@@ -1,0 +1,224 @@
+.introduction-container {
+    height: 520px;
+    width: auto;
+    background-color: #FCFCFC;
+    border: 1px solid #C4C4C4;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.container-center {
+    height: 100%;
+    width: auto;
+    max-width: 837px;
+    /* background-color: darkgoldenrod; */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+/* Item - Top*/
+.introduction-item-top {
+    width: 100%;
+    height: 50px;
+    /* background-color: aqua; */
+    margin-top: 30px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.introduction-item-top-left {
+    height: 100%;
+    width: auto;
+    min-width: 400px;
+    padding-left: 78px;
+    /* font-size: ; */
+    /* background-color: blue; */
+}
+.introduction-item-top-right {
+    width: 250px;
+    height: 100%;
+    margin-left: 50px;
+    /* font-size: ; */
+    background-color: darksalmon;
+    display: flex;
+}
+
+/*-------------------------------------------------------------*/
+/* Item - Bottom */
+.introduction-item-bot {
+    /* background-color: chartreuse; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.introduction-item-bot-left {
+    width: auto;
+    min-width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: darkslateblue; */
+}
+/* Img */
+.introduction-item-coverbook {
+    width: 250px;
+    height: 330px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    /* background-color: azure; */
+    border: 1px solid darkgray;
+}
+.introduction-item-boxtype {
+    width: 350px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    /* border: 1px solid darkcyan; */
+    /* background-color: rgb(23, 214, 23); */
+}
+.introduction-item-type {
+    color: #575757;
+    align-items: center;
+    font-size: 12px;
+    font-weight: none;
+    width: auto;
+    height: auto;
+    max-height: 30px;
+    min-width: 10px;
+    padding-top: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* background-color: #f3f3f3; */
+    border: 2px solid #BFBFBF;
+    border-radius: 14px;
+    margin-right: 5px;
+}
+/* Bottom - Right */
+.introduction-item-bot-right {
+    width: auto;
+    min-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(139, 61, 113); */
+}
+/* Box-User */
+.introduction-bot-boxuser {
+    display: flex;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    padding-left: 50px;
+    /* background-color: darkolivegreen; */
+}
+
+.introduction-item-userprofile {
+    height: 30px;
+    width: 30px;
+    margin-top: 2px;
+    border-radius: 50%;
+    background-color: rgb(51, 51, 51);
+}
+
+.introduction-item-username {
+    width: auto;
+    min-width: 100px;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+    padding-top: 1px;
+    /* background-color: brown; */
+}
+
+.introduction-bot-boxbook {
+    width: auto;
+    height: 100%;
+    min-height: 200px;
+    max-height: 295px;
+    /* background-color: darkorchid; */
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.introduction-item-bookname {
+    font-size: 32px;
+    font-weight: bold;
+    height: auto;
+    width: 100%;
+}
+
+.introduction-item-syn {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    max-height: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* background-color: deepskyblue; */
+    font-size: 15px;
+    color: #575757;
+}
+
+.introduction-item-boxfollow {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    /* background-color: #FCFCFC; */
+}
+.introduction-item-followbook {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 6px;
+    color: white;
+    width: 150px;
+    height: 42px;
+    cursor: pointer;
+    background-image: linear-gradient(0deg, rgb(255,121,85) 0%,rgb(255,154,126) 100%);
+}
+.introduction-item-followbook:hover {
+    filter: brightness(1.1);
+}
+
+.introduction-bot-boxrating {
+    width: auto;
+    height: 100px;
+    border-top: 1px solid #C4C4C4;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* background-color: crimson; */
+    display: flex;
+    /* align-items: center; */
+    justify-content:space-around;
+}
+
+.introduction-bot-view, .introduction-bot-follow, .introduction-bot-like {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.rating-title {
+    font-size: 20px;
+}
+
+.rating-count {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 5px;
+}

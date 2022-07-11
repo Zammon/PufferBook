@@ -1,39 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './../../css/Nav/DropNotification.css'
 import notificationImargin from './../../imagins/Profile_img.png'
+import { novelsObject } from "../../Objects/Novels";
+import {Link} from "react-router-dom";
 
 function DropNotification(props) {
-    
-    // const notiMap = 
-
     let today = new Date();
-    let h = today.getHours();
-    let m = today.getMinutes();
-    
+    let h = '0' + today.getHours();
+    let m = '0' + today.getMinutes();
     let totoallTimg = `${h}:${m}`
 
+    useEffect(()=>{
+        
+    },[])
+
+    const notiMap = novelsObject.map((noveldata, indexs)=>{
+        return <ItemNotification key={indexs} novel={noveldata}/>
+    })
+
     function ItemNotification(props) {
+        const {novel} = props;
+
         return(
-            <div className="notification-post">
+            <Link to={`/read/${novel.user.username}`} className="notification-post noneunder">
                 <div className="post-item-left">
-                    <img src={notificationImargin} className="img-test" />
+                    <img src={novel.user.userprofile} className="img-test" />
                 </div>
                 <div className="post-item-right">
                     <div className="post-item-top">
-                        <div className="post-item-username">
-                            {props.users}
+                        <div className="post-item-username colortextDropNotification">
+                            {novel.user.username}
                         </div>
-                        <div className="post-item-timeline">
+                        <div className="post-item-timeline colortextDropNotification">
                             {totoallTimg}
                         </div>
                     </div>
                     <div className="post-item-bottom">
                         <div className="post-item-status">
-                            Upload {props.names} next EP.
+                            Upload {novel.name} next EP.
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         );
     } 
 
@@ -48,7 +56,7 @@ function DropNotification(props) {
             <div className="notification-title">
                 Notification
             </div>
-            <ItemNotification />
+            {notiMap}
         </div>
     </div>
     );

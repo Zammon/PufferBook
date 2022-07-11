@@ -1,0 +1,9 @@
+.listEp-container {
+    width: auto;
+    height: auto;
+    min-height: 300px;
+    background-color: #FCFCFC;
+    border: 1px solid #C4C4C4;
+    border-top: none;
+    /* background-color: rgba(127, 255, 212, 0.37); */
+}

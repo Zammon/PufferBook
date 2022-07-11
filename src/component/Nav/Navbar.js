@@ -1,9 +1,11 @@
 import React, {Component, useEffect, useRef, useState} from "react";
+import { Link } from "react-router-dom";
 /*Component*/
 import DropdownUser from './DropdownUser';
 import Wallet from "./Wallet";
 import DropSearch from "./DropSearch";
 import DropNotification from "./DropNotification";
+import { novelsObLength } from "../../Objects/Novels";
 /*Css*/
 import './../../css/Nav/Navbar.css';
 import './../../css/Nav/DropdownUser.css';
@@ -15,11 +17,12 @@ import cloud from './../../imagins/Cloud.png';
 import userprofile from './../../imagins/Profile_Peotal.png';
 import logo from './../../imagins/Logo.png'
 
+
 /*Navbar Component*/
 function Navbar() {
     /* Object */
     const num = '$1500';
-
+    
     /* State */
     let [opendrop, setOpendrop] = useState(false);
     let [dropuser,setDropUser] = useState('');
@@ -31,39 +34,51 @@ function Navbar() {
     
     let [dropnoti, setDropnoti] = useState('');
     let [opennotidrop, setOpenNotiDrop] = useState(false);
+    let [noticount, setNotiCount] = useState(true);
+
     /* useRef */
-    const userdropRef = useRef(null);
-    const searchdropRef = useRef(null);
-    const notificationdropRef = useRef(null);
+    const userdropRef = useRef('');
+    const searchdropRef = useRef('');
+    const notificationdropRef = useRef('');
+    
     /* useEffect */
+    /* User */
     useEffect(()=>{
             let hangdleruser = (event) => {
                 if(!userdropRef.current.contains(event.target)){
                     onClickDropUser(false)
                 }
             }
-            
-            let hangdlersearch = (event) => {
-                if(!searchdropRef.current.contains(event.target)){
-                    onClickDropSearch(false)
-                }
-            }
-
-            let hangdlernotification = (event) => {
-                if(!notificationdropRef.current.contains(event.target)){
-                    onClickDropNotification(false)
-                }
-            }
-
                 document.addEventListener("mousedown", hangdleruser)
-                document.addEventListener("mousedown", hangdlersearch)
-                document.addEventListener("mousedown", hangdlernotification)
             return ()=>{
                 document.removeEventListener("mousedown", hangdleruser)
-                document.removeEventListener("mousedown", hangdlersearch)
-                document.removeEventListener("mousedown", hangdlernotification)
             }
-        
+    },[]);
+
+    /* Search */
+    useEffect(()=>{
+        let hangdlersearch = (event) => {
+            if(!searchdropRef.current.contains(event.target)){
+                onClickDropSearch(false)
+            }
+        }
+            document.addEventListener("mousedown", hangdlersearch)
+        return ()=>{
+            document.removeEventListener("mousedown", hangdlersearch)
+        }
+    },[]);
+
+    /* Notification */
+    useEffect(()=>{
+        let hangdlernotification = (event) => {
+            if(!notificationdropRef.current.contains(event.target)) {
+                onClickDropNotification(false)
+            }
+        }
+            document.addEventListener("mousedown", hangdlernotification)
+        return ()=>{
+            document.removeEventListener("mousedown", hangdlernotification)
+        }
     },[]);
 
     /* Function */
@@ -98,10 +113,11 @@ function Navbar() {
     }
 
     /* Drop Notification */
-    function onClickDropNotification(props) {
+    function onClickDropNotification(props,status) {
         if(props){
             setDropnoti(<DropNotification />);
             setOpenNotiDrop(true);
+            setNotiCount(status);
         } else {
             setDropnoti('');
             setOpenNotiDrop(false);
@@ -113,9 +129,9 @@ function Navbar() {
     <div className='navbar-full'>
         <div className="item-left">
             <img className="logo-Nav item-child" src={logo}/>
-            <div className="item-child-left">Home</div>
-            <div className="item-child-left ad">E-Book</div>
-            <div className="item-child-left">Commic</div>
+            <Link to="/" className="item-child-left">Home</Link>
+            <Link to="/novel" className="item-child-left ad">Novel</Link>
+            <Link to="/comic" className="item-child-left">Commic</Link>
         </div>
 
         <div ref={searchdropRef} className='item-center'>
@@ -129,18 +145,20 @@ function Navbar() {
                 <div className="div-coins mar-top" style={{color:"white"}}> {`:${num}`} </div>
                 {dropcoin}
             </div>
-            <img className="cloud-Nav" src={cloud} />
-            <div ref={notificationdropRef} onClick={()=>onClickDropNotification(!opennotidrop)} className="notification-setting-size">
-                <div className="reletive">
-                    <img className="notification-Nav" src={notification} /> 
-                    <div className="notification-amount">
-                        10
-                    </div>   
-                </div>
+            <Link to="/upload"><img className="cloud-Nav" src={cloud} /></Link>
+            <div ref={notificationdropRef} onClick={()=>onClickDropNotification(!opennotidrop,false)} className="notification-setting-size">
                 {dropnoti}
+                <div className="reletive">
+                <img className="notification-Nav" src={notification} /> 
+                <div className={`notification-amount${noticount ? '':'-nonedis'}`}>
+                    {noticount ? novelsObLength:''} 
+                </div>   
+                </div>
             </div>
-            <img ref={userdropRef} className={`profile-user${actives}`} src={userprofile} onClick={()=>onClickDropUser(!opendrop)}/>
+            <div ref={userdropRef} className="boxsRef">
+                <img className={`profile-user${actives}`} src={userprofile} onClick={()=>onClickDropUser(!opendrop)}/>
                 {dropuser}
+            </div>
         </div>
     </div>
     </>

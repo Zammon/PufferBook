@@ -9,7 +9,6 @@ function PageHome(){
         <section name="Homepage" className="basic-page">
             <Slideshow />
             <Noveldaily />
-            
             <Footer />
         </section>
     );

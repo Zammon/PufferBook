@@ -8,6 +8,7 @@ import settingIcon from './../../imagins/settingIcon.png';
 import logOutIcon from './../../imagins/logoutIcon.png';
 
 import './../../css/Nav/DropdownUser.css'
+import { Link, NavLink } from "react-router-dom";
 
 function DropdownUser() {
     const titleDrop = [
@@ -52,13 +53,48 @@ function DropdownUser() {
 
     /*item ใน dropdown*/ 
     function DropdownItem(props){
-        return(
-        <li className="dropdown-item">
-            <img className="dropdown-item-left" src={props.title.icons} />
-            <h4 className="dropdown-item-center">{props.title.titleName}</h4>
-            <div className="dropdown-item-right"></div>
-        </li>
-        );
+        const {title} = props;
+        if(title.titleName=='Your Profile') {
+           return(
+                    <Link to="/profile" className="dropdown-item setDropuser">
+                        <img className="dropdown-item-left" src={props.title.icons} />
+                        <h4 className="dropdown-item-center">{props.title.titleName}</h4>
+                        <div className="dropdown-item-right"></div>
+                    </Link>
+           )
+        } else if(title.titleName=='Top-Up') {
+            return(
+                    <Link as={Link} to="/top-up" className="dropdown-item setDropuser">
+                        <img className="dropdown-item-left" src={props.title.icons} />
+                        <h4 className="dropdown-item-center">{props.title.titleName}</h4>
+                        <div className="dropdown-item-right"></div>
+                    </Link>
+           )
+        } else if(title.titleName=='Book Mark') {
+            return(
+                    <Link as={Link} to="/bookmark" className="dropdown-item setDropuser">
+                        <img className="dropdown-item-left" src={props.title.icons} />
+                        <h4 className="dropdown-item-center">{props.title.titleName}</h4>
+                        <div className="dropdown-item-right"></div>
+                    </Link>
+           )
+        } else if(title.titleName=='Setting') {
+            return(
+                    <Link as={Link} to="/setting" className="dropdown-item setDropuser">
+                        <img className="dropdown-item-left" src={props.title.icons} />
+                        <h4 className="dropdown-item-center">{props.title.titleName}</h4>
+                        <div className="dropdown-item-right"></div>
+                    </Link>
+           )
+        } else if(title.titleName=='Log out') {
+            return(
+                    <Link as={Link} to="/logout" className="dropdown-item setDropuser noneborder">
+                        <img className="dropdown-item-left" src={props.title.icons} />
+                        <h4 className="dropdown-item-center">{props.title.titleName}</h4>
+                        <div className="dropdown-item-right"></div>
+                    </Link>
+           )
+        }
     }   
 
     /*ส่งค่าไปที่หัว component*/ 

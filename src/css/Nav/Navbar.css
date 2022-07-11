@@ -35,7 +35,8 @@
     margin-top: 3px;
     margin-left: 10px;
     cursor: pointer;
-    
+    color: rgb(255, 255, 255);
+    text-decoration: none;
     user-select: none; /* supported by Chrome and Opera */
    -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -98,6 +99,10 @@
     height: 28px;
 }
 
+.notification-amoun-nonedis {
+    display: none;
+}
+
 .notification-amount {
     position: absolute;
     overflow: hidden;
@@ -105,14 +110,15 @@
     color: rgb(255, 255, 255);
     font-weight: 600;
     padding-top: 0;
-    padding-left: 3px;
+    padding-left: 5px;
     padding-bottom: 3px;
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 999;
     height: 17px;
-    width: 17px;
+    width: auto;
+    min-width: 17px;
     border-radius: 50%;
     background-color: rgb(255, 44, 44);
     cursor: pointer;
@@ -196,10 +202,6 @@
     width: 23px;
     margin-top: 6px;
     margin-left: 20px;
-}
-
-.notification-setting-size {
-
 }
 
 @media only screen and (max-width: 1624px){
