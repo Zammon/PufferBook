@@ -5,7 +5,7 @@ import DropdownUser from './DropdownUser';
 import Wallet from "./Wallet";
 import DropSearch from "./DropSearch";
 import DropNotification from "./DropNotification";
-import { novelsObLength } from "../../Objects/Novels";
+import { notificationsLength } from "../../Objects/Novels";
 /*Css*/
 import './../../css/Nav/Navbar.css';
 import './../../css/Nav/DropdownUser.css';
@@ -151,7 +151,7 @@ function Navbar() {
                 <div className="reletive">
                 <img className="notification-Nav" src={notification} /> 
                 <div className={`notification-amount${noticount ? '':'-nonedis'}`}>
-                    {noticount ? novelsObLength:''} 
+                    {noticount ? notificationsLength:''} 
                 </div>   
                 </div>
             </div>

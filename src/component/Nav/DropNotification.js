@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import './../../css/Nav/DropNotification.css'
-import notificationImargin from './../../imagins/Profile_img.png'
-import { novelsObject } from "../../Objects/Novels";
-import {Link} from "react-router-dom";
+import './../../css/Nav/DropNotification.css';
+import notifications from './../../imagins/Profile_img.png';
+import { notificationsob } from "../../Objects/Novels";
+import { Link } from "react-router-dom";
 
 function DropNotification(props) {
     let today = new Date();
@@ -14,7 +14,7 @@ function DropNotification(props) {
         
     },[])
 
-    const notiMap = novelsObject.map((noveldata, indexs)=>{
+    const notiMap = notificationsob.map((noveldata, indexs)=>{
         return <ItemNotification key={indexs} novel={noveldata}/>
     })
 
@@ -22,7 +22,7 @@ function DropNotification(props) {
         const {novel} = props;
 
         return(
-            <Link to={`/read/${novel.user.username}`} className="notification-post noneunder">
+            <Link to={`/read/${novel.id}`} className="notification-post noneunder">
                 <div className="post-item-left">
                     <img src={novel.user.userprofile} className="img-test" />
                 </div>

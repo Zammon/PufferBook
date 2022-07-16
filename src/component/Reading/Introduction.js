@@ -1,14 +1,17 @@
 import React from "react";
-import './../../css/Reading/Introduction.css'
+import './../../css/Reading/Introduction.css';
+import {useParams} from 'react-router-dom';
 
-function Introduction() {
+function Introduction(props) {
+    const { product } = props;
     const a = ["รักโรแมนติก","LGBTQ+","วัยรุ่น"];
-
+    const { postID } = useParams();
+    const IdexNO = postID-1 ;
     /* CoverBook */
     function Coverbook(props) {
         return(
             <div className="introduction-item-coverbook">
-                <img src={props.coverbooks}/>
+                <img className="img100" src={props.coverbooks}/>
             </div>
         );
     };
@@ -41,7 +44,7 @@ function Introduction() {
             <div className="introduction-bot-boxuser">
                 {/* User Profile */}
                 <div className="introduction-item-userprofile">
-                    <img src={props.userprofile}/>
+                    <img className="img100" src={props.userprofile}/>
                 </div>
                 {/* User Name */}
                 <div className="introduction-item-username">
@@ -100,21 +103,21 @@ function Introduction() {
                         <h2>Introduction</h2> 
                     </div>
                 </div>
-            {/* Bottom */}
+            {/* Bottom */} 
             <div className="introduction-item-bot">
                 {/* Bottom-Left  -------------------------------------------------------*/}
                 <div className="introduction-item-bot-left">
                     {/* Img book */}
-                    <Coverbook /> {/* Pull => coverbooks */}
+                    <Coverbook coverbooks={product[IdexNO].imgs}/> {/* Pull => coverbooks */}
                     <TypeBook>
                         {typesmap}
                     </TypeBook>
                 </div>
                 {/* Bottom-Right -------------------------------------------------------*/}
                 <div className="introduction-item-bot-right">
-                    <Userprofile/> {/* Pull => userprofile, username */}
-                    <Namebook /> {/* Pull => namebook, syn */}
-                    <Ratings /> {/* Pull => views, follows, likes */}
+                    <Userprofile userprofile={product[IdexNO].user.userprofile} username={product[IdexNO].user.username} /> {/* Pull => userprofile, username */}
+                    <Namebook namebook={product[IdexNO].name} syn={product[IdexNO].synopsis}/> {/* Pull => namebook, syn */}
+                    <Ratings views={product[IdexNO].rating.views} follows={product[IdexNO].rating.follows} likes={product[IdexNO].rating.likes}/> {/* Pull => views, follows, likes */}
                 </div>
             </div> 
             </div>

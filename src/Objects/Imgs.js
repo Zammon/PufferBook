@@ -11,7 +11,6 @@ import  novel07 from '../imagins/novels/novel07.jpg';
 import  novel08 from '../imagins/novels/novel08.jpg';
 import  novel09 from '../imagins/novels/novel09.jpg';
 import  novel10 from '../imagins/novels/novel10.jpg';
-import  novel11 from ''
 
 /* User Profile */
 import user01 from '../imagins/Profile_img.png'

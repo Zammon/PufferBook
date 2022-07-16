@@ -1,15 +1,6 @@
 import React, {Component, useEffect, useState } from "react";
 import './../../css/Home/Noveldaily.css';
-import novel1 from './../../imagins/novels/novel01.jpg';
-import novel2 from './../../imagins/novels/novel02.jpg';
-import novel3 from './../../imagins/novels/novel03.jpg';
-import novel4 from './../../imagins/novels/novel04.jpg';
-import novel5 from './../../imagins/novels/novel05.jpg';
-import novel6 from './../../imagins/novels/novel06.jpg';
-import novel7 from './../../imagins/novels/novel07.jpg';
-import novel8 from './../../imagins/novels/novel08.jpg';
-import novel9 from './../../imagins/novels/novel09.jpg';
-import novel10 from './../../imagins/novels/novel10.jpg';
+import { novelsob } from "../../Objects/Novels";
 import iconnoveldaily from './../../imagins/icons/noveldaily.png';
 import {ButslideLeft, ButslideRight} from './../Tools/Butslide'
 import { Link } from "react-router-dom";
@@ -17,74 +8,14 @@ import { Link } from "react-router-dom";
 
 function Noveldaily() {
     /* Objects */
-    const novelDaily = [
-        {
-            id: 0,
-            title:"ขาดคุณนางฟ้าข้างห้องไป...",
-            synopsis:"เรื่องราวเกี่ยวกับ...01",
-            imgs: novel1
-        },
-        {
-            id:1,
-            title:"ซ่อนคมเวท เจ็ดดาบมาร",
-            synopsis:"เรื่องราวเกี่ยวกับ...02",
-            imgs: novel2
-        },
-        {
-            id:2,
-            title:"Light Novel Ranking 2019",
-            synopsis:"เรื่องราวเกี่ยวกับ...03",
-            imgs: novel3
-        },
-        {
-            id:3,
-            title:"ผมเนี่ยนะ...ชายแปด!",
-            synopsis:"เรื่องราวเกี่ยวกับ...04",
-            imgs: novel4
-        },
-        {
-            id:4,
-            title:"ผมเนี่ยนะ...ชายแปด!",
-            synopsis:"เรื่องราวเกี่ยวกับ...04",
-            imgs: novel5
-        },
-        {
-            id:5,
-            title:"ผมเนี่ยนะ...ชายแปด!",
-            synopsis:"เรื่องราวเกี่ยวกับ...04",
-            imgs: novel6
-        },
-        {
-            id:6,
-            title:"ผมเนี่ยนะ...ชายแปด!",
-            synopsis:"เรื่องราวเกี่ยวกับ...04",
-            imgs: novel7
-        },
-        {
-            id:7,
-            title:"ผมเนี่ยนะ...ชายแปด!",
-            synopsis:"เรื่องราวเกี่ยวกับ...04",
-            imgs: novel8
-        },
-        {
-            id:8,
-            title:"ผมเนี่ยนะ...ชายแปด!",
-            synopsis:"เรื่องราวเกี่ยวกับ...04",
-            imgs: novel9
-        },
-        {
-            id:9,
-            title:"ผมเนี่ยนะ...ชายแปด!",
-            synopsis:"เรื่องราวเกี่ยวกับ...04",
-            imgs: novel10
-        }
-    ]
 
-    const novelsBox = novelDaily.map((n,index)=>{
+    const novelfils = novelsob.filter(ob=> ob.id>4) 
+
+    const novelsBox = novelfils.map((n,index)=>{
         return <NovelItems key={index} novels={n} />
     });
 
-    const novellength = novelDaily.length;
+    const novellength = novelfils.length;
     /*usestate*/
     /*SlidePage ->*/
     let [slidepage, setSlidePage] = useState(0);
@@ -111,12 +42,12 @@ function Noveldaily() {
 
         return(
             <div className="noveldaily-slides-items">
-                <Link as={Link} to={`/read/post/${novels.title}`}>
+                <Link as={Link} to={`/read/${novels.id}`}>
                     <img className="noveldaily-slides-image" src={novels.imgs}/>
                 </Link>
                 <div className="noveldaily-slides-content">
                     <h4 className="noveldaily-slides-title">
-                        {novels.title}
+                        {novels.name}
                     </h4>
                     <h5 className="noveldaily-slides-syn">
                         {novels.synopsis}

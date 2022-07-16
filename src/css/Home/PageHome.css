@@ -10,3 +10,16 @@
     /* background-color: rgba(199, 199, 199, 0.233); */
     /* padding-bottom: 100px; */
 }
+
+.display-setting-center {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-center {
+    height: auto;
+    width: auto;
+}

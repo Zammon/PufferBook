@@ -6,11 +6,15 @@ import Footer from "../Foot/Footer";
 
 function PageHome(){
     return(
-        <section name="Homepage" className="basic-page">
+        <div name="Homepage" className="basic-page">
             <Slideshow />
-            <Noveldaily />
+            <div className="display-setting-center">
+                <div className="div-center">
+                    <Noveldaily />  
+                </div>
+            </div>
             <Footer />
-        </section>
+        </div>
     );
 }
 
