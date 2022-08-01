@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import account from './../Objects/Users'
-import { novel01,novel02,novel03,novel04,novel05,novel06,novel07,novel08,novel09,novel10 } from "./Imgs";
+import { novel01,novel02,novel03,novel04,novel05,novel06,novel07,novel08,novel09,novel10,novel11,novel12,novel13 } from "./Imgs";
 import LoremIpsum, { loremIpsum } from "react-lorem-ipsum";
 
 
@@ -51,7 +51,7 @@ const novelsob = [
                     username: account[1].userName,
                     userprofile: account[1].userProfile
                 },
-        imgs:'',
+        imgs:novel12,
         name: 'Story of Zammon!',
         synopsis: 'เรื่องราวเกี่ยวกับ "แซม" ที่เป็นโปรแกรมเมอร์หนุ่ม...',
         types:  ["รักโรแมนติก", "วัยรุ่น", "ชีวิตทั่วไป"],
@@ -69,7 +69,7 @@ const novelsob = [
                     username: account[0].userName,
                     userprofile: account[0].userProfile
                 },
-        imgs:'',
+        imgs:novel11,
         name: 'Undertale: Asgore!',
         synopsis: 'เรื่องราวเกี่ยวกับ แอสกรอ! หลังจากเด็กที่ตกมายังพื้น...',
         types:  ["รักโรแมนติก", "วัยรุ่น", "ชีวิตทั่วไป"],
@@ -87,7 +87,7 @@ const novelsob = [
                     username: account[0].userName,
                     userprofile: account[0].userProfile
                 },
-        imgs:'',        
+        imgs:novel13,        
         name: 'Art’Y Story [Special]',
         synopsis: 'เรื่องราวหลังแต่งงานกันของ "อาร์ต" กับ "ตุลย์"...',
         types:  ["รักโรแมนติก", "วัยรุ่น", "ชีวิตทั่วไป"],
@@ -104,23 +104,6 @@ const novelsob = [
                     username: account[0].userName,
                     userprofile: account[0].userProfile
                 },
-        imgs:'',        
-        name: 'Art’Y Story [Special]',
-        synopsis: 'เรื่องราวหลังแต่งงานกันของ "อาร์ต" กับ "ตุลย์"...',
-        types:  ["รักโรแมนติก", "วัยรุ่น", "ชีวิตทั่วไป"],
-        rating: {
-                    views: 100,
-                    follows: 100,
-                    likes: 100
-                },
-        title:'',
-        textnovel: <LoremIpsum p={5}/>
-    },{
-        id: 5 ,
-        user:   { 
-                    username: account[0].userName,
-                    userprofile: account[0].userProfile
-                },
         imgs: novel01,        
         name: "ขาดคุณนางฟ้าข้างห้องไป...",
         synopsis: 'เรื่องราวเกี่ยวกับ...5',
@@ -133,7 +116,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 6 ,
+        id: 5 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -150,7 +133,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 7 ,
+        id: 6 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -167,7 +150,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 8 ,
+        id: 7 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -184,7 +167,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 9 ,
+        id: 8 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -201,7 +184,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 10 ,
+        id: 9 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -218,7 +201,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 11 ,
+        id: 10 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -235,7 +218,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 12 ,
+        id: 11 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -252,7 +235,7 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 13 ,
+        id: 12 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
@@ -269,14 +252,14 @@ const novelsob = [
         title:'',
         textnovel: <LoremIpsum p={5}/>
     },{
-        id: 14 ,
+        id: 13 ,
         user:   { 
                     username: account[0].userName,
                     userprofile: account[0].userProfile
                 },
         imgs: novel10,        
-        name: 'บาร์ชอบ(ของ)ใหญ่',
-        synopsis: 'เรื่องราวเกี่ยวกับ...14',
+        name: 'บาร์ชอบ(ของ)ใหญ่...',
+        synopsis: 'เมื่อลูกชายเจ้านายชื่อใหญ่ และน้องมันก็ดันใหญ่จริงๆ "บาร์" พนังงานออฟฟิศที่วันๆไม่สนใจอะไรนอกจากเรื่องงานจนทำให้โสดขึ้นคานจนอายุเกือบขึ้นเลขสี่ จู่ๆดันถูกจับผลูได้มาเป้นพี่เลี้ยยงฝึกงานให้กับลูกชายของเจ้าของบริษัทอย่าง "คุณชญานิน หรือคุณใหญ่" เด็กหนุ่มเชื้อฝรั่งหุ่นนายแบบที่สเปคเกินเอื้อมถึง เรื่องราวระหว่างนายกับลูกจ้างได้เริ่มเปลี่ยนไป เมื่อทั้งคู่ตัดสินใจที่จะก้าวข้ามเส้นนั้น ความสัมพันธ์ลับๆได้ถูกสร้างขึ้นมาเขาจะทำอย่างไร... เมื่อสอนงานกลับไม่ใช้ห้องทำงานแต่ดันเป็นเตียงของลูกชายเจ้านายคนนี้',
         types:  ["รักโรแมนติก", "วัยรุ่น", "ชีวิตทั่วไป"],
         rating: {
                     views: 100,

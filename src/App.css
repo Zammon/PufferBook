@@ -1,5 +1,7 @@
 body {
   overflow: overlay;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Prompt', sans-serif;
 }
 
 ::-webkit-scrollbar {

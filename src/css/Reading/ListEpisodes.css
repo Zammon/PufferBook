@@ -2,8 +2,131 @@
     width: auto;
     height: auto;
     min-height: 300px;
-    background-color: #FCFCFC;
-    border: 1px solid #C4C4C4;
+    /* background-color: #FCFCFC; */
+    /* border: 1px solid #C4C4C4; */
     border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* background-color: rgba(127, 255, 212, 0.37); */
+}
+
+.listEp-items {
+    height: 100%;
+    width: auto;
+    min-width: 807.13px;
+    max-width: 837px;
+    display: flex;
+    flex-direction: column;
+}
+
+.listEp-title {
+    margin-top: 45px;
+    margin-left: 78px;
+    margin-bottom: 65px;
+}
+
+.listEp-episode {
+    height: auto;
+    width: auto;
+    /* background-color: #C4C4C4; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 67px;
+    /* margin-right: 60px; */
+    margin-bottom: 10px;
+    /* padding-bottom: 20px; */
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.listEp-episode-title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #C4C4C4;
+    height: 40px;
+    width: auto;
+}
+
+.title-null {
+    width: 44.27px;
+    height: auto;
+}
+
+.title-ep {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.title-ep:nth-child(2) {
+    margin: 0 60px;
+}
+
+.listEp-episode-ep {
+    display: flex;
+    flex-direction: column;
+}
+
+.listEp-episode-ep-item {
+    display: flex;
+    padding-right: 10px;
+    /* background-color: chartreuse; */
+    padding: 15px 0;
+    min-height: 50px;
+    height: auto;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid darkgray;
+}
+
+.item-ep-num, .item-ep-bookname, .item-ep-date, .item-ep-like {
+    text-align: center;
+    align-items: center;
+    height: auto;
+}
+
+.item-ep-num {
+    /* background-color: darkmagenta; */
+    width: auto;
+    min-width: 58px;
+    margin-right: 10px;
+}
+
+.item-ep-bookname {
+    /* background-color: darkcyan; */
+    width: 270px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.item-ep-date {
+    /* background-color: darkgoldenrod; */
+    width: 110px;
+    margin-right: 25px;
+}
+
+.item-ep-like {
+    /* background-color: darkolivegreen; */
+    width: 65px;
+    margin-left: 8px;
+    margin-right: 38px;
+}
+
+.item-ep-button {
+    background-color: #FF8564;
+    width: 70px;
+    height: 35px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    color: #FCFCFC;
+    cursor: pointer;
+}
+
+.item-ep-button:hover {
+    filter: brightness(1.1);
+}
+
+.item-ep-button:active {
+    filter: brightness(0.9);
 }

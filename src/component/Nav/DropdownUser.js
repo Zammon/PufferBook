@@ -8,7 +8,7 @@ import settingIcon from './../../imagins/settingIcon.png';
 import logOutIcon from './../../imagins/logoutIcon.png';
 
 import './../../css/Nav/DropdownUser.css'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function DropdownUser() {
     const titleDrop = [
@@ -56,43 +56,43 @@ function DropdownUser() {
         const {title} = props;
         if(title.titleName=='Your Profile') {
            return(
-                    <NavLink to="/profile" className="dropdown-item setDropuser">
+                    <Link to="/profile/zammon" className="dropdown-item setDropuser">
                         <img className="dropdown-item-left" src={props.title.icons} />
                         <h4 className="dropdown-item-center">{props.title.titleName}</h4>
                         <div className="dropdown-item-right"></div>
-                    </NavLink>
+                    </Link>
            )
         } else if(title.titleName=='Top-Up') {
             return(
-                    <NavLink to="/top-up" className="dropdown-item setDropuser">
+                    <Link to="/top-up" className="dropdown-item setDropuser">
                         <img className="dropdown-item-left" src={props.title.icons} />
                         <h4 className="dropdown-item-center">{props.title.titleName}</h4>
                         <div className="dropdown-item-right"></div>
-                    </NavLink>
+                    </Link>
            )
         } else if(title.titleName=='Book Mark') {
             return(
-                    <NavLink to="/bookmark" className="dropdown-item setDropuser">
+                    <Link to="/bookmark" className="dropdown-item setDropuser">
                         <img className="dropdown-item-left" src={props.title.icons} />
                         <h4 className="dropdown-item-center">{props.title.titleName}</h4>
                         <div className="dropdown-item-right"></div>
-                    </NavLink>
+                    </Link>
            )
         } else if(title.titleName=='Setting') {
             return(
-                    <NavLink to="/setting" className="dropdown-item setDropuser">
+                    <Link to="/setting" className="dropdown-item setDropuser">
                         <img className="dropdown-item-left" src={props.title.icons} />
                         <h4 className="dropdown-item-center">{props.title.titleName}</h4>
                         <div className="dropdown-item-right"></div>
-                    </NavLink>
+                    </Link>
            )
         } else if(title.titleName=='Log out') {
             return(
-                    <NavLink  to="/logout" className="dropdown-item setDropuser noneborder">
+                    <Link  to="/logout" className="dropdown-item setDropuser noneborder">
                         <img className="dropdown-item-left" src={props.title.icons} />
                         <h4 className="dropdown-item-center">{props.title.titleName}</h4>
                         <div className="dropdown-item-right"></div>
-                    </NavLink>
+                    </Link>
            )
         }
     }   

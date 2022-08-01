@@ -21,7 +21,7 @@ function App() {
           {/* Set Read */}
           <Route path="/read/:postID" element={<PageReading />} />
           {/* Set Profile */}
-          <Route path="/profile" element={<PageProfile />} />
+          <Route path="/profile/:userID" element={<PageProfile />} />
           {/* Set Top-Up */}
           <Route path="/top-up" element={<PageTopUp />} />
           {/* Set Error */}

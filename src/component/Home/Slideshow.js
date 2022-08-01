@@ -53,6 +53,12 @@ function Slideshow() {
 
         return () => { resetTimeout() };
     }, [slidess]);
+    
+    function resetTimeout() {
+            if(timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        }
 
     /*function*/
     function SlideItems(props) {
@@ -68,12 +74,6 @@ function Slideshow() {
                     <img className="slide-item-img" src={cover.imgs} />
                 </div>
             );   
-    }
-
-    function resetTimeout() {
-        if(timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
     }
 
     function Butslide(props) {

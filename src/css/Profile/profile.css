@@ -1,0 +1,26 @@
+.profile-container {
+    height: auto;
+    min-height: 880px;
+    width: 100%;
+    /* background-color: rgb(255, 225, 203); */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-item {
+    width: 950px;
+    height: auto;
+    /* background-color: rgb(212, 212, 255); */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-area {
+    background-color: #F7F7F7;
+    border-top: 2px solid #D9D9D9;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+}

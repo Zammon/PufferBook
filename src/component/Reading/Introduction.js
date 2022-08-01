@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './../../css/Reading/Introduction.css';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 function Introduction(props) {
     const { product } = props;
     const a = ["รักโรแมนติก","LGBTQ+","วัยรุ่น"];
     const { postID } = useParams();
     const IdexNO = postID-1 ;
+    const [butfollow,setButFollow] = useState(true);
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    }, [postID])
+
+    useEffect(()=>{
+        if(product[IdexNO].user.username==='zammonv'){
+            setButFollow(false)
+        }else {
+            setButFollow(true)
+        }
+    },[postID])
+
     /* CoverBook */
     function Coverbook(props) {
         return(
@@ -41,7 +55,7 @@ function Introduction(props) {
     /* UserProfile */
     function Userprofile(props) {
         return(
-            <div className="introduction-bot-boxuser">
+            <Link to={`/profile/${props.username}`} className="introduction-bot-boxuser introduction-edit-font">
                 {/* User Profile */}
                 <div className="introduction-item-userprofile">
                     <img className="img100" src={props.userprofile}/>
@@ -50,12 +64,19 @@ function Introduction(props) {
                 <div className="introduction-item-username">
                     {props.username}
                 </div>
-            </div>
+            </Link>
         );
     };
 
     /* NameBook */
     function Namebook(props) {
+        
+        let butFollow = <div className="introduction-item-boxfollow">
+                            <div className="introduction-item-followbook">
+                                ติดตาม
+                            </div>
+                        </div> 
+        
         return(
             <div className="introduction-bot-boxbook">
                         <div className="introduction-item-bookname">
@@ -64,11 +85,7 @@ function Introduction(props) {
                         <div className="introduction-item-syn">
                             {props.syn} 
                         </div>
-                        <div className="introduction-item-boxfollow">
-                            <div className="introduction-item-followbook">
-                                ติดตาม
-                            </div>
-                        </div> 
+                        {butfollow ? butFollow:''}
                     </div>
         );
     };
@@ -102,6 +119,7 @@ function Introduction(props) {
                     <div className="introduction-item-top-left">
                         <h2>Introduction</h2> 
                     </div>
+                    <Userprofile userprofile={product[IdexNO].user.userprofile} username={product[IdexNO].user.username} /> {/* Pull => userprofile, username */}
                 </div>
             {/* Bottom */} 
             <div className="introduction-item-bot">
@@ -115,7 +133,6 @@ function Introduction(props) {
                 </div>
                 {/* Bottom-Right -------------------------------------------------------*/}
                 <div className="introduction-item-bot-right">
-                    <Userprofile userprofile={product[IdexNO].user.userprofile} username={product[IdexNO].user.username} /> {/* Pull => userprofile, username */}
                     <Namebook namebook={product[IdexNO].name} syn={product[IdexNO].synopsis}/> {/* Pull => namebook, syn */}
                     <Ratings views={product[IdexNO].rating.views} follows={product[IdexNO].rating.follows} likes={product[IdexNO].rating.likes}/> {/* Pull => views, follows, likes */}
                 </div>

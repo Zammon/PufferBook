@@ -1,0 +1,87 @@
+.menuuser-container {
+    width: 100%;
+    height: 120px;
+    /* background-color: darkcyan; */
+    padding-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 200px; */
+}
+
+.menuuser-item-menu{
+    width: 700px;
+    padding: 0;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: #5fd331; */
+
+}
+
+.menuuser-item-func {
+    width: 250px;
+    height: auto;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+.menuuser-button-poststatus {
+    width: 150px;
+    height: 40px;
+    padding: 0 8px;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: 2px solid #8C8C8C;
+    display: flex;
+    justify-content: center;
+    color: #8C8C8C;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menuuser-button-poststatus:hover {
+    filter: brightness(1.2);
+}
+
+.menuuser-button {
+    width: auto;
+    min-width: 150px;
+    height: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 8px;
+    margin: 0 12px;
+    text-align: center;
+    /* border: 5px solid #D2D2D2; */
+    border-radius: 25px;
+    background-color: #F3F3F3;
+}
+
+.menuuser-button-ative {
+    width: auto;
+    min-width: 150px;
+    height: auto;
+    padding: 3px 40px;
+    margin: 0 12px;
+    text-align: center;
+    border: 5px solid #484848;
+    border-radius: 25px;
+    background-color: #2F2F2F;
+    color: #ffffff!important;
+}
+
+.menuuser-edit-font {
+    font-size: 16px;
+    font-weight: bold;
+    color: #D2D2D2;
+    cursor: pointer;
+}
+
+

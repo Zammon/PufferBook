@@ -11,14 +11,20 @@ function Noveldaily() {
 
     const novelfils = novelsob.filter(ob=> ob.id>4) 
 
-    const novelsBox = novelfils.map((n,index)=>{
+    const novelsBox = novelsob.map((n,index)=>{
         return <NovelItems key={index} novels={n} />
     });
 
-    const novellength = novelfils.length;
+    const novellength = novelsBox.length;
     /*usestate*/
     /*SlidePage ->*/
     let [slidepage, setSlidePage] = useState(0);
+    let [calculate, setCalculate] = useState(0);
+
+    useEffect(()=>{
+        const cal = (novellength/5)-1
+        setCalculate(Math.ceil(cal))
+    },[slidepage])
 
     /* functions */
     function onbuttonleft() {
@@ -30,7 +36,9 @@ function Noveldaily() {
     }
     
     function onbuttonright() {
-        if(slidepage===(novellength/5)-1){
+        console.log(slidepage)
+        console.log(novellength)
+        if(slidepage===calculate){
             setSlidePage(slidepage);
         }else{
             setSlidePage(slidepage + 1);

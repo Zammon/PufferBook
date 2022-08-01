@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 /*Component*/
 import DropdownUser from './DropdownUser';
 import Wallet from "./Wallet";
-import DropSearch from "./DropSearch";
+import DropSearch,{ SearchItem } from "./DropSearch";
 import DropNotification from "./DropNotification";
 import { notificationsLength } from "../../Objects/Novels";
+import {novelsob} from './../../Objects/Novels';
 /*Css*/
 import './../../css/Nav/Navbar.css';
 import './../../css/Nav/DropdownUser.css';
@@ -20,27 +21,40 @@ import logo from './../../imagins/Logo.png'
 
 /*Navbar Component*/
 function Navbar() {
-    /* Object */
-    const num = '$1500';
-    
     /* State */
     let [opendrop, setOpendrop] = useState(false);
     let [dropuser,setDropUser] = useState('');
     let [actives, setActives] = useState('');
     
     let [dropsearch, setDropSearch] = useState('');
+    let [searchChange, setSearchChange] = useState('');
+    let [showItem, setShowItem] = useState('');
 
     let [dropcoin, setDropCoin] = useState('');
     
     let [dropnoti, setDropnoti] = useState('');
     let [opennotidrop, setOpenNotiDrop] = useState(false);
     let [noticount, setNotiCount] = useState(true);
+    
+    /* Object */
+    const num = '$1500';
 
+    let dropsearfilter = novelsob.filter((novel)=>{
+        return novel.name.includes(searchChange);
+    })
+
+    let dropsearchnovel = dropsearfilter.map((novel,index)=>{
+        return <SearchItem key={index} novels={novel} />;
+    })
+
+    
     /* useRef */
     const userdropRef = useRef('');
     const searchdropRef = useRef('');
     const notificationdropRef = useRef('');
     
+    /*Context */
+
     /* useEffect */
     /* User */
     useEffect(()=>{
@@ -59,7 +73,7 @@ function Navbar() {
     useEffect(()=>{
         let hangdlersearch = (event) => {
             if(!searchdropRef.current.contains(event.target)){
-                onClickDropSearch(false)
+                setDropSearch('')
             }
         }
             document.addEventListener("mousedown", hangdlersearch)
@@ -96,11 +110,23 @@ function Navbar() {
     }
     /* Drop Search */
     function onClickDropSearch(props){
-        if(props){
-            setDropSearch(<DropSearch />);
-     } else {
+        if(searchChange!==''){
+            setDropSearch(<DropSearch>{dropsearchnovel}</DropSearch>)
+     }  else {
             setDropSearch('');
      }
+    }
+
+    /* Drop Search onChange */
+    function onChangeSearch(props) {
+        if(searchChange!==null){
+            setSearchChange(props);
+            setDropSearch(<DropSearch>{dropsearchnovel}</DropSearch>)
+            console.log(props)
+        } else if(searchChange===null) {
+            setSearchChange(props);
+            setDropSearch('')      
+        }
     }
 
     /* Drop Coin */
@@ -123,22 +149,29 @@ function Navbar() {
             setOpenNotiDrop(false);
         }
     }
+
     /* return main */
     return(
     <>
     <div className='navbar-full'>
+        {/* Home + Novels + Comic */}
         <div className="item-left">
             <img className="logo-Nav item-child" src={logo}/>
             <Link to="/" className="item-child-left">Home</Link>
             <Link to="/novel" className="item-child-left ad">Novel</Link>
             <Link to="/comic" className="item-child-left">Commic</Link>
         </div>
-
+        {/* Drop Search */}
         <div ref={searchdropRef} className='item-center'>
                 <img className="vector-Nav" src={vector} />
-                <input className="input-search" type='input' onClick={()=>onClickDropSearch(true)} placeholder='Search...'/>
+                <input className="input-search" type='input' 
+                onClick={()=>onClickDropSearch(true)} 
+                onChange={(event)=>{onChangeSearch(event.target.value)}} 
+                value={searchChange} 
+                placeholder='Search...'/>
                 {dropsearch}
         </div> 
+        {/* Coins + Upload + Notification + User */}
         <div className='item-right'>
             <div className="box-coins">
                 <img className="coins-Nav" src={coins} onMouseEnter={()=>onHoverDropCoin(true)} onMouseLeave={()=>onHoverDropCoin(false)} />

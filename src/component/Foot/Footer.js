@@ -65,7 +65,7 @@ function Footer() {
     function Socials() {
         return(
             <div className="footer-item-social">
-               <div className="item-title">
+               <div className="item-title mars">
                         ติดต่อ
                 </div>
                 <div className="item-subhead-social">

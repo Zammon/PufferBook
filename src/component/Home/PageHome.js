@@ -6,7 +6,7 @@ import Footer from "../Foot/Footer";
 
 function PageHome(){
     return(
-        <div name="Homepage" className="basic-page">
+        <div className="basic-page">
             <Slideshow />
             <div className="display-setting-center">
                 <div className="div-center">
